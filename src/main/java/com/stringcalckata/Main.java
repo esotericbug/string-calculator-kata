@@ -30,6 +30,9 @@ public class Main {
                 numbers = numbers.substring(4);
             }
 
+            // add \n as optional delimiter
+            delimiter = delimiter + "|\n";
+
             String[] numbersList = numbers.split(delimiter);
             
             // TODO
