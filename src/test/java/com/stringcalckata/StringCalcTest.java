@@ -47,4 +47,10 @@ public class StringCalcTest {
             assertEquals(e.getMessage(), "negative numbers not allowed -> -2,-4");
         }
     }
+
+    @Test
+    @DisplayName("Test Additional Delimiters")
+    public void testOtherDelimiter() {
+        assertEquals(3, stringCalc.add("//;\n1;2"));
+    }
 }
