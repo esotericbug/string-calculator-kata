@@ -1,9 +1,8 @@
 package com.stringcalckata;
 
 import java.util.ArrayList;
-import java.util.List;
 
-public class Main {
+public class StringCalc {
     /*
      * This method takes in a string of comma-seperated numbers as input and
      * calculates the sum of all of them
@@ -38,8 +37,7 @@ public class Main {
 
             String[] numbersList = numbers.split(delimiter);
 
-            // TODO
-            return 0;
+            return sum(numbersList);
         }
     }
 
@@ -59,10 +57,11 @@ public class Main {
         }
 
         // if negative nums size is not zero then throw error
-        if(negativeNums.size() != 0){
+        if (negativeNums.size() != 0) {
             throw new IllegalArgumentException("negative numbers not allowed -> " + String.join(",", negativeNums));
         }
 
         return total;
     }
 }
+

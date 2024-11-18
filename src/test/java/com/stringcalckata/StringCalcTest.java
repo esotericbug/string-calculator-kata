@@ -1,5 +1,5 @@
 package com.stringcalckata;
 
-public class MainTest {
+public class StringCalcTest {
     
 }
