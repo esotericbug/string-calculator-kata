@@ -27,4 +27,24 @@ public class StringCalcTest {
         assertEquals(0, stringCalc.add(""));
     }
 
+    @Test
+    @DisplayName("Test Numbers")
+    public void testAddNumbers() {
+        assertEquals(3, stringCalc.add("1,2"));
+    }
+
+    @Test
+    @DisplayName("Test Numbers with Negatives")
+    public void testNegativeNumber() {
+        try {
+            stringCalc.add("-1,2");
+        } catch (IllegalArgumentException e) {
+            assertEquals(e.getMessage(), "negative numbers not allowed -> -1");
+        }
+        try {
+            stringCalc.add("1,-2,3,-4");
+        } catch (IllegalArgumentException e) {
+            assertEquals(e.getMessage(), "negative numbers not allowed -> -2,-4");
+        }
+    }
 }
