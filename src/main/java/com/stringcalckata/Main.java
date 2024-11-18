@@ -18,6 +18,20 @@ public class Main {
                 return Integer.parseInt(numbers);
             }
         } else {
+            String delimiter = ",";
+            /*
+             * check if the input string matches the regex to check if there is a different
+             * delimiter than and if exists extract that delimiter and the subsequent
+             * 
+             * https://regex101.com/r/2184rg/1
+             */
+            if (numbers.matches("\\/\\/(.{1})\\n(.*)")) {
+                delimiter = Character.toString(numbers.charAt(2));
+                numbers = numbers.substring(4);
+            }
+
+            String[] numbersList = numbers.split(delimiter);
+            
             // TODO
             return 0;
         }
