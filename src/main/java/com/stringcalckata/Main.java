@@ -1,5 +1,8 @@
 package com.stringcalckata;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Main {
     /*
      * This method takes in a string of comma-seperated numbers as input and
@@ -34,10 +37,32 @@ public class Main {
             delimiter = delimiter + "|\n";
 
             String[] numbersList = numbers.split(delimiter);
-            
+
             // TODO
             return 0;
         }
     }
 
+    private int sum(String[] numbers) {
+        int total = 0;
+        ArrayList<String> negativeNums = new ArrayList<String>();
+
+        for (int i = 0; i < numbers.length; i++) {
+            // check if a number is negative and add it to the negative nums array
+            if (Integer.parseInt(numbers[i]) < 0) {
+                negativeNums.add(numbers[i]);
+            }
+            // if number is not negative add it to the totals
+            else {
+                total += Integer.parseInt(numbers[i]);
+            }
+        }
+
+        // if negative nums size is not zero then throw error
+        if(negativeNums.size() != 0){
+            throw new IllegalArgumentException("negative numbers not allowed -> " + String.join(",", negativeNums));
+        }
+
+        return total;
+    }
 }
