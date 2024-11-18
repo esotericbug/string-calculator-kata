@@ -41,6 +41,11 @@ public class StringCalc {
         }
     }
 
+     /*
+     * This methods takes the array of strings as input and checks for any negative numbers (throws error) and returns the total
+     * 
+     * @param numbers
+     */
     private int sum(String[] numbers) {
         int total = 0;
         ArrayList<String> negativeNums = new ArrayList<String>();
